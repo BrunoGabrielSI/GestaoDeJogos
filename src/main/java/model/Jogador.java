@@ -9,6 +9,10 @@ public class Jogador {
         this.pontuacao = pontuacao;
     }
 
+    public void adicionarPontuacao(int pontos){
+        this.pontuacao += pontos;
+    }
+
     public int getPontuacao() {
         return pontuacao;
     }

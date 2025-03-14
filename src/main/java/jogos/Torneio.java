@@ -26,21 +26,27 @@ public class Torneio {
 
     public void simularTorneio(){
         for (Jogador jogador : jogadores){
-            int pontos = random.nextInt(1) + 500;
+            int pontos = random.nextInt(401) + 100;
             jogador.adicionarPontuacao(pontos);
         }
     }
 
     public void exibirRankingFinal() {
-        StringBuilder ranking = new StringBuilder("== RANKING FINAL DO TORNEIO: " + nome + "== \n");
+        // ordenação decrecente
+        jogadores.sort(Comparator.comparingInt(Jogador::getPontuacao).reversed());
+        StringBuilder ranking = new StringBuilder("\n== RANKING FINAL DO TORNEIO: " + nome + "== \n");
         for (int i = 0; i < jogadores.size(); i++) {
-            ranking.append((i + 1)).append(" - ").append(jogadores.get(i)).append("\n");
-
-            ranking.append("\n VENCEDOR: ").append(jogadores.get(0));
-
-            System.out.println(ranking);
+            ranking.append(i + 1).append(" - ").append(jogadores.get(i)).append("\n");
         }
 
+        // função para exibir o vencedor
+        Jogador vencedor = jogadores.get(0);
+
+        ranking.append("\n VENCEDOR: ").append(vencedor);
+
+        System.out.println(ranking);
     }
+
+
 
 }

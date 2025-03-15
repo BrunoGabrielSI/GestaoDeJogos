@@ -33,5 +33,8 @@ public class Main {
         torneioPrincipal.adicionarJogador(new Jogador("João", 0));
         torneioPrincipal.adicionarJogador(new Jogador("Pedro", 0));
 
+
+        torneioPrincipal.exibirJogadores();
+
     }
 }

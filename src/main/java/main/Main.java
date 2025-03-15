@@ -2,6 +2,8 @@ package main;
 
 import jogos.Torneio;
 import model.Jogador;
+import torneio.Estatistica;
+import torneio.TorneioPrincipal;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,5 +26,28 @@ public class Main {
         System.out.println("\n🔹 Iniciando " + torneio2 + "...");
         torneio2.simularTorneio();
         torneio2.exibirRankingFinal();
+
+        //Torneio
+
+        TorneioPrincipal torneioPrincipal = new TorneioPrincipal("Torneio LDS I - 15/03");
+        torneioPrincipal.adicionarJogador(new Jogador("Maria", 0));
+        torneioPrincipal.adicionarJogador(new Jogador("João", 0));
+        torneioPrincipal.adicionarJogador(new Jogador("Pedro", 0));
+
+
+        torneioPrincipal.exibirJogadores();
+
+        //Estatisticas
+
+        Estatistica estatistica = new Estatistica(torneioPrincipal);
+
+        estatistica.registrarPontuacao(new Jogador("Maria", 100));
+        estatistica.registrarPontuacao(new Jogador("João", 80));
+
+        estatistica.exibirPontuacoes();
+        estatistica.exibirVencedorTorneio();
+
     }
+
+
 }

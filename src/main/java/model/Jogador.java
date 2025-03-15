@@ -17,6 +17,9 @@ public class Jogador {
         return pontuacao;
     }
 
+    public String getNome() {
+        return nome;
+    }
     @Override
     public String toString() {
         return String.format("Jogador: %s | Pontuação: %d", this.nome, this.pontuacao);

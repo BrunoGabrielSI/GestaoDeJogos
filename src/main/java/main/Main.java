@@ -45,6 +45,7 @@ public class Main {
         estatistica.registrarPontuacao(new Jogador("João", 80));
 
         estatistica.exibirPontuacoes();
+        estatistica.exibirVencedorTorneio();
 
     }
 

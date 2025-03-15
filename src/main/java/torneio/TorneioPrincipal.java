@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TorneioPrincipal {
-    public String nome;
+    private String nome;
     private Set<Jogador> jogadores;
 
     public TorneioPrincipal(String nome){
@@ -26,5 +26,13 @@ public class TorneioPrincipal {
     public void exibirJogadores(){
         System.out.println("=== Jogadores do torneio - " + this.nome + " ===");
         this.jogadores.forEach(jogador -> System.out.println(jogador.getNome()));
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Set<Jogador> getJogadores() {
+        return jogadores;
     }
 }

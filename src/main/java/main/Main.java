@@ -2,6 +2,7 @@ package main;
 
 import jogos.Torneio;
 import model.Jogador;
+import torneio.Estatistica;
 import torneio.TorneioPrincipal;
 
 public class Main {
@@ -36,5 +37,16 @@ public class Main {
 
         torneioPrincipal.exibirJogadores();
 
+        //Estatisticas
+
+        Estatistica estatistica = new Estatistica(torneioPrincipal);
+
+        estatistica.registrarPontuacao(new Jogador("Maria", 100));
+        estatistica.registrarPontuacao(new Jogador("João", 80));
+
+        estatistica.exibirPontuacoes();
+
     }
+
+
 }
